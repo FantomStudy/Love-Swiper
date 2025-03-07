@@ -27,7 +27,7 @@ body {
   transform: translateX(50%) rotate(-90deg);
   transform-origin: bottom center;
   background-color: #ff0000;
-  transition: transform 1s ease;
+  transition: transform 0.35s ease;
   border-radius: 50px;
   z-index: 1;
 }
@@ -104,4 +104,42 @@ body {
 .input {
   width: 60%;
   accent-color: red;
+}
+
+.next-link {
+  text-decoration: none;
+  color: red;
+  position: relative;
+}
+
+.next-link span {
+  content: "";
+  border-radius: 50px;
+  width: 18px;
+  height: 3px;
+  position: absolute;
+  background-color: red;
+  top: 0;
+  right: 0;
+  animation: alternate appear-span 1s ease-in-out;
+  transform-origin: right center;
+}
+.next-link span:first-child {
+  width: 24px;
+  transform: rotate(125deg);
+}
+.next-link span:nth-child(2) {
+  transform: translate(-9px, -5px) rotate(90deg);
+}
+.next-link span:nth-child(3) {
+  transform: translate(9px, 8px) rotate(160deg);
+}
+@keyframes appear-span {
+  0% {
+    opacity: 0.6;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
