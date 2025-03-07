@@ -102,7 +102,7 @@ body {
   }
 }
 .input {
-  width: 60%;
+  width: clamp(150px, 60%, 300px);
   accent-color: red;
 }
 
