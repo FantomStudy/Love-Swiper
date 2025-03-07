@@ -14,30 +14,65 @@ body {
   height: 150px;
   border-radius: 150px 150px 0 0;
   position: relative;
+  --amplitude: 0px;
 }
 
-/* Анимация тряски */
+/* Фиксированная анимация с использованием --amplitude */
 @keyframes shake {
   0% {
-    transform: translateX(0);
+    transform: translate(0, 0) rotate(0deg);
   }
   25% {
-    transform: translateX(-5px);
+    transform: translate(
+        calc(-1 * var(--amplitude)),
+        calc(var(--amplitude) / 2)
+      )
+      rotate(-1deg);
   }
   50% {
-    transform: translateX(5px);
+    transform: translate(var(--amplitude), calc(-1 * var(--amplitude) / 2))
+      rotate(1deg);
   }
   75% {
-    transform: translateX(-5px);
+    transform: translate(
+        calc(-0.5 * var(--amplitude)),
+        calc(var(--amplitude) / 4)
+      )
+      rotate(-0.5deg);
   }
   100% {
-    transform: translateX(0);
+    transform: translate(0, 0) rotate(0deg);
   }
 }
 
-.shake {
-  animation: shake 0.3s ease; 
+/* Добавляем префиксы для совместимости */
+@-webkit-keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(
+        calc(-1 * var(--amplitude)),
+        calc(var(--amplitude) / 2)
+      )
+      rotate(-1deg);
+  }
+  50% {
+    transform: translate(var(--amplitude), calc(-1 * var(--amplitude) / 2))
+      rotate(1deg);
+  }
+  75% {
+    transform: translate(
+        calc(-0.5 * var(--amplitude)),
+        calc(var(--amplitude) / 4)
+      )
+      rotate(-0.5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
+
 
 .arrow {
   position: absolute;
