@@ -10,6 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   grid-gap: clamp(35px, 12vw, 75px);
+  overflow: hidden;
 }
 .metric {
   width: 75%;
