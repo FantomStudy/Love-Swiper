@@ -62,12 +62,12 @@ body {
 
 .heart {
   position: absolute;
-  width: clamp(20px, 12vw, 45px);
-  height: clamp(20px, 12vw, 45px);
+  width: clamp(20px, 11vw, 45px);
+  height: clamp(20px, 11vw, 45px);
   right: 50%;
   bottom: 0;
   transform: translateX(50%) rotate(var(--angle))
-    translateY(clamp(-175px, -45vw, -55px));
+    translateY(clamp(-175px, -44vw, -55px));
   transform-origin: bottom center;
 }
 .heart-outline {
@@ -122,7 +122,7 @@ body {
   background-color: red;
   top: 0;
   right: 0;
-  animation: alternate appear-span 1s ease-in-out;
+  animation: alternate appear-span 0.45s ease-in-out;
   transform-origin: right center;
 }
 .next-link span:first-child {
