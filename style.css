@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 * {
   margin: 0;
+  font-family: "Nunito", sans-serif;
 }
 body {
   height: 100vh;
@@ -7,77 +9,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  grid-gap: 75px;
+  grid-gap: clamp(35px, 12vw, 75px);
 }
 .metric {
-  width: 300px;
-  height: 150px;
+  width: 75%;
+  height: clamp(120px, 40vw, 150px);
   border-radius: 150px 150px 0 0;
   position: relative;
-  --amplitude: 0px;
 }
-
-/* Фиксированная анимация с использованием --amplitude */
-@keyframes shake {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(
-        calc(-1 * var(--amplitude)),
-        calc(var(--amplitude) / 2)
-      )
-      rotate(-1deg);
-  }
-  50% {
-    transform: translate(var(--amplitude), calc(-1 * var(--amplitude) / 2))
-      rotate(1deg);
-  }
-  75% {
-    transform: translate(
-        calc(-0.5 * var(--amplitude)),
-        calc(var(--amplitude) / 4)
-      )
-      rotate(-0.5deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
-
-/* Добавляем префиксы для совместимости */
-@-webkit-keyframes shake {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(
-        calc(-1 * var(--amplitude)),
-        calc(var(--amplitude) / 2)
-      )
-      rotate(-1deg);
-  }
-  50% {
-    transform: translate(var(--amplitude), calc(-1 * var(--amplitude) / 2))
-      rotate(1deg);
-  }
-  75% {
-    transform: translate(
-        calc(-0.5 * var(--amplitude)),
-        calc(var(--amplitude) / 4)
-      )
-      rotate(-0.5deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
-
 
 .arrow {
   position: absolute;
   width: 4px;
-  height: 140px;
+  height: clamp(90px, 40vw, 140px);
   bottom: 0;
   right: 50%;
   transform: translateX(50%) rotate(-90deg);
@@ -100,7 +44,8 @@ body {
   background: #000;
   right: 50%;
   bottom: 0;
-  transform: translate(50%) rotate(var(--angle)) translateY(-130px);
+  transform: translate(50%) rotate(var(--angle))
+    translateY(clamp(-130px, -35vw, -50px));
   transform-origin: bottom center;
 }
 .tick-mini {
@@ -116,19 +61,47 @@ body {
 
 .heart {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #ccc;
+  width: clamp(20px, 12vw, 45px);
+  height: clamp(20px, 12vw, 45px);
   right: 50%;
   bottom: 0;
-  transform: translateX(50%) rotate(var(--angle)) translateY(-175px);
+  transform: translateX(50%) rotate(var(--angle))
+    translateY(clamp(-175px, -45vw, -55px));
   transform-origin: bottom center;
 }
-
-.heart.filled {
-  background: red;
+.heart-outline {
+  fill: #bfbfbf;
+  transition: fill 0.5s ease;
+}
+.heart-inside {
+  transition: fill 1s ease;
 }
 
+.heart.filled .heart-outline,
+.heart.filled .heart-inside {
+  fill: red;
+}
+.heart.filled {
+  animation: flying 1.5s ease-in-out infinite;
+  filter: drop-shadow(0px 0px 12px rgba(255, 0, 0, 0.4));
+}
+.tip {
+  font-size: clamp(16px, 6vw, 25px);
+  text-align: center;
+}
+
+@keyframes flying {
+  0% {
+    translate: 0;
+  }
+  50% {
+    translate: 0 30%;
+  }
+  100% {
+    translate: 0;
+  }
+}
 .input {
-  width: 55%;
+  width: 60%;
+  accent-color: red;
 }
