@@ -54,8 +54,8 @@ body {
 }
 
 .slider {
-  width: 70%;
-  height: 60vh;
+  width: 30%;
+  height: 80vh;
   position: relative;
   perspective: 1000px;
   user-select: none; /* Предотвращает выделение текста при свайпе */
@@ -89,4 +89,28 @@ body {
   height: 100%;
   object-fit: cover;
   pointer-events: none; /* Предотвращает взаимодействие с изображением */
+}
+@media (max-width: 1440px) {
+  .slider {
+    height: 75vh;
+    width: 40%;
+  }
+}
+@media (max-width: 1024px) {
+  .slider {
+    height: 70vh;
+    width: 55%;
+  }
+}
+@media (max-width: 768px) {
+  .slider {
+    height: 65vh;
+    width: 75%;
+  }
+}
+@media (max-width: 450px) {
+  .slider {
+    height: 65vh;
+    width: 90%;
+  }
 }
