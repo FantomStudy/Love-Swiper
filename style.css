@@ -10,7 +10,6 @@ body {
   align-items: center;
   justify-content: center;
   grid-gap: clamp(35px, 12vw, 75px);
-  overflow: hidden;
 }
 .metric {
   width: 75%;
@@ -67,7 +66,7 @@ body {
   right: 50%;
   bottom: 0;
   transform: translateX(50%) rotate(var(--angle))
-    translateY(clamp(-175px, -44vw, -55px));
+    translateY(clamp(-165px, -44vw, -55px));
   transform-origin: bottom center;
 }
 .heart-outline {
