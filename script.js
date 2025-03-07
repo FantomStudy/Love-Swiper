@@ -20,7 +20,7 @@ const updateHeartCounter = () => {
       tip.textContent = "Я люблю ❤️ тебя!";
       break;
     case 5:
-      tip.innerHTML = `Идем <a href="./sliderPage.html" class="next-link">дальше? <span></span><span></span><span></span></a>`;
+      tip.innerHTML = `Идем <a href="./slidePage/sliderPage.html" class="next-link">дальше? <span></span><span></span><span></span></a>`;
       break;
     default:
       tip.textContent = "Увеличивай медленно";
