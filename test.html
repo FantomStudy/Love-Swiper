@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналоговые часы</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+
+        }
+
+        #clock {
+            position: relative;
+            width: 300px; /* Размер изображения, подгоняйте под ваш clock.png */
+            height: 300px;
+            background: url('clock.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            transition: transform 0.1s linear; /* Плавное обновление */
+        }
+
+        #hour {
+            width: 4px;
+            height: 60px;
+            background-color: black; /* Цвет часовой стрелки */
+            transform: translateX(-2px); /* Центрирование */
+        }
+
+        #minute {
+            width: 4px;
+            height: 80px;
+            background-color: black; /* Цвет минутной стрелки */
+        }
+
+        #second {
+            width: 2px;
+            height: 90px;
+            background-color: green; /* Цвет секундной стрелки, как на картинке */
+            transform: translateX(-1px); /* Центрирование */
+        }
+    </style>
+</head>
+<body>
+<div id="clock">
+    <div id="hour" class="hand"></div>
+    <div id="minute" class="hand"></div>
+    <div id="second" class="hand"></div>
+</div>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        // Вычисляем углы для стрелок
+        const hourAngle = (hours % 12 + minutes / 60) * 30; // 360° / 12 = 30° на час + коррекция минут
+        const minuteAngle = minutes * 6; // 360° / 60 = 6° на минуту
+        const secondAngle = seconds * 6; // 360° / 60 = 6° на секунду
+
+        // Обновляем положение стрелок
+        document.getElementById('hour').style.transform = `translateX(-2px) rotate(${hourAngle}deg)`;
+        document.getElementById('minute').style.transform = `rotate(${minuteAngle}deg)`;
+        document.getElementById('second').style.transform = `translateX(-1px) rotate(${secondAngle}deg)`;
+    }
+
+    // Обновляем часы каждую секунду
+    setInterval(updateClock, 1000);
+    // Инициализируем часы при загрузке
+    updateClock();
+</script>
+</body>
+</html>

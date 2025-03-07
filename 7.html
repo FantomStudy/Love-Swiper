@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор цветов RGB</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .color-box {
+      width: 300px;
+      height: 150px;
+      margin: 20px auto;
+      border: 1px solid #000;
+    }
+    .slider-container {
+      margin: 10px 0;
+    }
+    input[type="range"] {
+      width: 300px;
+    }
+    label {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Генератор цветов RGB</h1>
+  
+  <div class="color-box" id="colorBox"></div>
+  
+  <div id="rgbCode">rgb(0, 0, 0)</div>
+  
+  <div class="slider-container">
+    <label for="red">Red:</label>
+    <input type="range" id="red" min="0" max="255" value="0" oninput="updateColor()">
+  </div>
+  <div class="slider-container">
+    <label for="green">Green:</label>
+    <input type="range" id="green" min="0" max="255" value="0" oninput="updateColor()">
+  </div>
+  <div class="slider-container">
+    <label for="blue">Blue:</label>
+    <input type="range" id="blue" min="0" max="255" value="0" oninput="updateColor()">
+  </div>
+  <script>
+    function updateColor(){
+      const red = document.getElementById("red").value
+      const green = document.getElementById("green").value
+      const blue = document.getElementById("blue").value
+
+      const box = document.getElementById("colorBox")
+      const sign = document.getElementById("rgbCode")
+
+      box.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+      sign.textContent = `rgb(${red}, ${green}, ${blue})`
+    }
+    updateColor()
+  </script>
+</body>
+</html>

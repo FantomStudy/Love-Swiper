@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>March 8th</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="metric">
+      <div class="arrow"></div>
+      <div class="scale">
+        <div class="tick" style="--angle: -60deg"></div>
+        <div class="tick" style="--angle: -30deg"></div>
+        <div class="tick" style="--angle: 0deg"></div>
+        <div class="tick" style="--angle: 30deg"></div>
+        <div class="tick" style="--angle: 60deg"></div>
+
+        <div class="tick tick-mini" style="--angle: -80deg"></div>
+        <div class="tick tick-mini" style="--angle: -70deg"></div>
+        <div class="tick tick-mini" style="--angle: -50deg"></div>
+        <div class="tick tick-mini" style="--angle: -40deg"></div>
+        <div class="tick tick-mini" style="--angle: -20deg"></div>
+        <div class="tick tick-mini" style="--angle: -10deg"></div>
+        <div class="tick tick-mini" style="--angle: 10deg"></div>
+        <div class="tick tick-mini" style="--angle: 20deg"></div>
+        <div class="tick tick-mini" style="--angle: 40deg"></div>
+        <div class="tick tick-mini" style="--angle: 50deg"></div>
+        <div class="tick tick-mini" style="--angle: 70deg"></div>
+        <div class="tick tick-mini" style="--angle: 80deg"></div>
+      </div>
+      <div class="hearts">
+        <div class="heart" data-angle="-60" style="--angle: -60deg"></div>
+        <div class="heart" data-angle="-30" style="--angle: -30deg"></div>
+        <div class="heart" data-angle="0" style="--angle: 0deg"></div>
+        <div class="heart" data-angle="30" style="--angle: 30deg"></div>
+        <div class="heart" data-angle="60" style="--angle: 60deg"></div>
+      </div>
+    </div>
+    <input type="range" id="input-range" min="0" max="180" value="0" class="input" />
+    <script src="./script.js"></script>
+  </body>
+</html>
